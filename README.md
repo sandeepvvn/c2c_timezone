@@ -1,39 +1,14 @@
 # c2c_timezone
 
 
-c2c_timezone(Convert to client timezone) is a simple yet useful JS that is used to convert the time to the client side timezone by employing minimum changes the in your application. c2c_timezone is capable to convert the server time to both local and any other timezone you want it to. 
+c2c_timezone(Convert to client timezone) is a simple yet useful JS that is used to convert the time to the client side timezone by employing minimum changes  in your application. c2c_timezone is capable to convert the  date-time to both local and any other timezone you want it to. 
 
-This package has **javascript handle** that can be fetched into your code to handle the date objects. The primary purpose of this package is to eliminate the mundane code that user has to use to handle timzones and necessary format.
+This package has **javascript handle** that can be fetched into your code to handle the date objects. The primary purpose of this package is to eliminate the mundane code that user  uses to handle timezones and necessary formats.
 
 The package could be used for following cases:
-1. **Convert the date from server to local (host or browser) time.**
-2. **Convert the date from server to ANY standard timezone(IANA) offset you want it to be.**
+- **Convert the date from server to local (host or browser) time.**
+- **Convert the date from server to ANY standard timezone(IANA) offset you want it to be.**
 
-
-
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 
 ## Usage
@@ -42,7 +17,7 @@ End with an example of getting some data out of the system or using it for a lit
     
    Return the date in the following format :
      
-     `<div data-ctoc   data-ctoc-time="" data-ctoc-req-zone="" data-ctoc-req-format=""</div>`
+   `<div data-ctoc   data-ctoc-time="" data-ctoc-req-zone="" data-ctoc-req-format=""</div>`
    
    Here **data-ctoc** is the identifier for tag, which gets removed once the date is converted.
    
