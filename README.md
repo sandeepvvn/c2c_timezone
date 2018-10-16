@@ -13,7 +13,7 @@ The package could be used for following cases:
 
 ## Usage
 
- 1.**To convert a date by using a data attribute**
+ - **Convert a date by using a data attribute**
     
    Return the date in the following format :
      
@@ -35,8 +35,8 @@ The package could be used for following cases:
    
     `Fri Mar 01 2013 05:30:00 GMT+0530 (India Standard Time)`
    
-   **For Changing Timezone :**
-   - Using IANA format:
+   **For Changing Timezone :**(Default Format : "ddd MMM dd YYYY hh:mm:ss")
+    Using IANA format:
    
    `<div data-ctoc-timezone  data-ctoc-time="Mar 01 2013 05:30:00 +5:30" data-ctoc-req-zone="America/Lima" data-ctoc-req-format=""></div>`
     
@@ -44,55 +44,74 @@ The package could be used for following cases:
   
   `Thu Feb 28 2013 19:00:00`
    
-   - Using offset in hh:mm format:
+    Using offset in hh:mm format:
    
    `<div data-ctoc-timezone  data-ctoc-time="Mar 01 2013 05:30:00 +5:30" data-ctoc-req-zone="-5:00" data-ctoc-req-format=""</div>`
 Output :
-  `hu Feb 28 2013 19:00:00`
+  `Thu Feb 28 2013 19:00:00`
   
- -Using Integer :
+  Using Integer :
   
+  `<div data-ctoc-timezone  data-ctoc-time="Mar 01 2013 05:30:00 +5:30" data-ctoc-req-zone=-5 data-ctoc-req-format=""></div>`
   
+  Output :
   
+  `Thu Feb 28 2013 19:00:00`
                                 
+  **Changing Format:** 
    
- 2.**To convert any date object in JS on client side** Include a div tag in the html code in following format 
-    
-   `<div data-ctoc-timezone="" data-ctoc-time="" data-ctoc-req-zone="" data-ctoc-req-format=""</div>`
-    Example:
-    `<div data-ctoc-timezone="server" data-ctoc-time="Feb 28 2013 19:00:00 EST" data-ctoc-req-zone="IST" data-ctoc-req-format="Do M YYYY        hh:mm:ss a"</div>`
-    The above example converts your EST time to IST, and return the date in string.
-    
-                                                            or
-   Call the the `convertTime` function in js.
-        `CtoCTimezone.convertTime(dateobject,"Required time zone");`
+   `<div data-ctoc-timezone  data-ctoc-time="Mar 01 2013 05:30:00 +5:30" data-ctoc-req-zone="America/Lima" data-ctoc-req-format=" ddd Do MMM YYYY hh:mm:ss #{America}"></div>`
+   
+   Output:
+   
+   `Thu 28th Feb 2013 19:00:00 America`
+  
+  
+  
+- **Convert using method call :**
+
+  
+   Use the  `toTimeZone` method in CtoC.
+        `CtoC.toTimeZone(dateobject,timeZone,format);`
+        
+   Here the **dateobject** is must paramater for the method to work while both timeZone and format considered optional.It is Date object type of JS (Date()).
+   
+   In **timeZone** , you can pass any IANA or offset values specified in  **[View Time Zones]**  (https://pages.github.com/). Not passing or giving empty string converts to local time.  
+   
+   In **format** sepcify any of the format types in **[View Formats](https://pages.github.com/)**. Not passing a format or giving empty returns in default format.
    Example:
-          `CtoCTimezone.convertTime(new Date(),"America/New_York")`;
           
+          `CtoC.toTimeZone(new Date(),"EST");`
+          
+   Output:
+         
+         `Fri Mar 1 2013 05:30:00`
+    
+    Changing format in toTimeZone:
+        `CtoC.toTimeZone(new Date(),"EST","Do MMM YYYY hh:mm:ss #{EST}");`
+        
+    Output :
+        
+        `28th Feb 2013 19:00:00 EST`
+    
+   **Changing Format:**
+         
+  Use the 'toFormat' method in CtoC.
+     
+     `CtoC.toFormat(dateobject,format)`
+  Format accepts two parameters - dateobject the date passed in date type and an optional format in string of specifies types.
+  
+  Example:
+  
+  `CtoC.toFormat(new Date(),"Do MMM YYYY hh:mm:ss #{EST}");`
+  
+  Output:
+  
+  `28th Feb 2013 19:00:00 EST`
 
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
 
 
