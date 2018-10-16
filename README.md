@@ -1,14 +1,14 @@
 # c2c_timezone
 
 
-c2c_timezone(Convert to client timezone) is a simple yet useful **gem** that is used to convert the time to the client side timezone by employing minimum changes the in your application. c2c_timezone is capable to convert the server time to both local and anyother timezone you want it to. 
+c2c_timezone(Convert to client timezone) is a simple yet useful JS that is used to convert the time to the client side timezone by employing minimum changes the in your application. c2c_timezone is capable to convert the server time to both local and any other timezone you want it to. 
 
-This package has both **rails and javascript handle** that can be fetched into your code to handle the date objects. The primary purpose of this package is to eliminate the mundane code that user has to use to handle timzones and necessary format.
+This package has **javascript handle** that can be fetched into your code to handle the date objects. The primary purpose of this package is to eliminate the mundane code that user has to use to handle timzones and necessary format.
 
 The package could be used for following cases:
 1. **Convert the date from server to local (host or browser) time.**
 2. **Convert the date from server to ANY standard timezone(IANA) offset you want it to be.**
-3. **Convert time to above  which is in part-reload(instaLoad).**
+
 
 
 ## Getting Started
@@ -38,10 +38,15 @@ End with an example of getting some data out of the system or using it for a lit
 
 ## Usage
 
- 1.**To convert a date from the server**
+ 1.**To convert a date by using a div tag**
     
-   **For Rails** Return the date in the following format :
-    
+   Return the date in the following format :
+     `<div data-ctoc   data-ctoc-time="" data-ctoc-req-zone="" data-ctoc-req-format=""</div>`
+   Here data-ctoc is the identifier for tag, which gets removed once the date is converted.
+   
+   The time to be converted should be given JS date string  format  in the data-ctoc-time field [View Date String formats](https://pages.github.com/).
+   
+   data-ctoc-format is supplement which returns date required in a specified format which you desire.There are a range format it supports.[View Formats](https://pages.github.com/)
    
      "<div data-ctoc-timezone=\"server\" data-ctoc-time=\""+time_string+"\" data-ctoc-req-zone=\""+req_zone+"\" data-ctoc-req-format=\""+req_format+"\"></div>"
     
