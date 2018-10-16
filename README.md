@@ -13,44 +13,44 @@ The package could be used for following cases:
 
 ## Usage
 
- 1.**To convert a date by using a div tag**
+ 1.**To convert a date by using a data attribute**
     
    Return the date in the following format :
      
-   `<div data-ctoc   data-ctoc-time="" data-ctoc-req-zone="" data-ctoc-req-format=""</div>`
+   `<div data-ctoc-timezone   data-ctoc-time="" data-ctoc-req-zone="" data-ctoc-req-format=""</div>`
    
-   Here **data-ctoc** is the identifier for tag, which gets removed once the date is converted.
+   Here **data-ctoc-timezone** is the identifier for attribute,  gets removed once the date is conversion is complete.
    
-   **data-ctoc-time** is time to be converted which should be given JS date string  format . **[View Date String formats]**  (https://pages.github.com/).
+   **data-ctoc-time** is the time to be converted , should be given in a valid JS date-string  format . **[View Date String formats]**  (https://pages.github.com/).
    
-   **data-ctoc-req-zone** is the timezone you want the time to be converted.The field accepts all IANA timezones and variety of timezone offsets. You can also give the offset in form of "+hh:mm" or "-hh:mm" or simply an integer.( The Timezone codes are available in the **[View Time Zones]**  (https://pages.github.com/).
+   **data-ctoc-req-zone** is the timezone to convert the given date-time object.The field accepts all IANA timezones and variety of other timezone offsets. You can also give the offset in form of **"+hh:mm" or "-hh:mm" or simply an integer**.The Timezone offsets are available in the **[View Time Zones]**  (https://pages.github.com/).
    
-   **data-ctoc-format** is supplement which returns date required in a specified format which you desire.There are a range format it supports **[View Formats](https://pages.github.com/)**.Not defining the format gives a Date with Datestring format.
+   **data-ctoc-format** is the format specifier for the date-time object. You can construct your own format using the following rules       **[View Formats](https://pages.github.com/)**. Not defining the format gives a Date with Datestring format.
    
-   Example :
+   **Example** :
    
-   `<div data-ctoc-timezone  data-ctoc-time="Mar 01 2013 05:30:00 +5:30" data-ctoc-req-zone="" data-ctoc-req-format=""</div>`
+   `<div data-ctoc-timezone  data-ctoc-time="Mar 01 2013 05:30:00 +5:30" data-ctoc-req-zone="" data-ctoc-req-format=""></div>`
     
    Output:
    
     `Fri Mar 01 2013 05:30:00 GMT+0530 (India Standard Time)`
    
-   For Changing Timezone :
-   1.Using IANA format:
+   **For Changing Timezone :**
+   - Using IANA format:
    
-   `<div data-ctoc-timezone  data-ctoc-time="Mar 01 2013 05:30:00 +5:30" data-ctoc-req-zone="America/Lima" data-ctoc-req-format=""</div>`
+   `<div data-ctoc-timezone  data-ctoc-time="Mar 01 2013 05:30:00 +5:30" data-ctoc-req-zone="America/Lima" data-ctoc-req-format=""></div>`
     
   Output :
   
   `Thu Feb 28 2013 19:00:00`
    
-   2. Using offset in hh:mm format:
+   - Using offset in hh:mm format:
    
    `<div data-ctoc-timezone  data-ctoc-time="Mar 01 2013 05:30:00 +5:30" data-ctoc-req-zone="-5:00" data-ctoc-req-format=""</div>`
 Output :
   `hu Feb 28 2013 19:00:00`
   
-  3. Using Integer :
+ -Using Integer :
   
   
   
