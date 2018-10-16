@@ -41,17 +41,45 @@ End with an example of getting some data out of the system or using it for a lit
  1.**To convert a date by using a div tag**
     
    Return the date in the following format :
+     
      `<div data-ctoc   data-ctoc-time="" data-ctoc-req-zone="" data-ctoc-req-format=""</div>`
-   Here data-ctoc is the identifier for tag, which gets removed once the date is converted.
    
-   The time to be converted should be given JS date string  format  in the data-ctoc-time field [View Date String formats](https://pages.github.com/).
+   Here **data-ctoc** is the identifier for tag, which gets removed once the date is converted.
    
-   data-ctoc-format is supplement which returns date required in a specified format which you desire.There are a range format it supports.[View Formats](https://pages.github.com/)
+   **data-ctoc-time** is time to be converted which should be given JS date string  format . **[View Date String formats]**  (https://pages.github.com/).
    
-     "<div data-ctoc-timezone=\"server\" data-ctoc-time=\""+time_string+"\" data-ctoc-req-zone=\""+req_zone+"\" data-ctoc-req-format=\""+req_format+"\"></div>"
+   **data-ctoc-req-zone** is the timezone you want the time to be converted.The field accepts all IANA timezones and variety of timezone offsets. You can also give the offset in form of "+hh:mm" or "-hh:mm" or simply an integer.( The Timezone codes are available in the **[View Time Zones]**  (https://pages.github.com/).
+   
+   **data-ctoc-format** is supplement which returns date required in a specified format which you desire.There are a range format it supports **[View Formats](https://pages.github.com/)**.Not defining the format gives a Date with Datestring format.
+   
+   Example :
+   
+   `<div data-ctoc-timezone  data-ctoc-time="Mar 01 2013 05:30:00 +5:30" data-ctoc-req-zone="" data-ctoc-req-format=""</div>`
     
+   Output:
+   
+    `Fri Mar 01 2013 05:30:00 GMT+0530 (India Standard Time)`
+   
+   For Changing Timezone :
+   1.Using IANA format:
+   
+   `<div data-ctoc-timezone  data-ctoc-time="Mar 01 2013 05:30:00 +5:30" data-ctoc-req-zone="America/Lima" data-ctoc-req-format=""</div>`
     
-   The Date is returned in a string of desired format.
+  Output :
+  
+  `Thu Feb 28 2013 19:00:00`
+   
+   2. Using offset in hh:mm format:
+   
+   `<div data-ctoc-timezone  data-ctoc-time="Mar 01 2013 05:30:00 +5:30" data-ctoc-req-zone="-5:00" data-ctoc-req-format=""</div>`
+Output :
+  `hu Feb 28 2013 19:00:00`
+  
+  3. Using Integer :
+  
+  
+  
+                                
    
  2.**To convert any date object in JS on client side** Include a div tag in the html code in following format 
     
